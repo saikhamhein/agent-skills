@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "release_id": "REPLACE_WITH_RELEASE_NAME",
+  "source_revision": "REPLACE_WITH_FULL_FROZEN_DESIGN_REVISION_OR_SHA256",
+  "required_roles": [
+    "native-electrical",
+    "schematic",
+    "copper-layers",
+    "bom",
+    "manufacturing",
+    "placement",
+    "native-mechanical",
+    "mechanical-drawings",
+    "mechanical-export",
+    "assembly-instructions",
+    "validation-record",
+    "release-notes"
+  ],
+  "artifacts": [
+    {
+      "path": "REPLACE_WITH_RELATIVE_ARTIFACT_PATH",
+      "role": "native-electrical",
+      "sha256": "REPLACE_WITH_SHA256"
+    }
+  ],
+  "omissions": {}
+}

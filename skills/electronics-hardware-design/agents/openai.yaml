@@ -1,0 +1,4 @@
+interface:
+  display_name: "Electronics Hardware Design"
+  short_description: "Components, PCB layout, mechanical CAD, and release"
+  default_prompt: "Use $electronics-hardware-design to develop or review this hardware design with traceable decisions and validation evidence."
