@@ -1,6 +1,6 @@
 ---
 name: electronics-hardware-design
-description: Select and qualify electronic components, organize PCB placement and routing, develop CAD-linked mechanical designs, and prepare traceable hardware releases. Use for board-level electronics with or without an enclosure, including reviews and revisions of an existing design.
+description: Select and qualify electronic components, organize PCB placement and routing, develop CAD-linked mechanical designs, measure physical references for parametric CAD, and prepare traceable hardware releases. Use for board-level electronics with or without an enclosure, including physical-reference reverse engineering, reviews, and revisions of an existing design.
 ---
 
 # Electronics hardware design
@@ -25,6 +25,7 @@ Keep four kinds of information separate:
 - Requirements, architecture, components, or substitutions: [references/component-selection.md](references/component-selection.md)
 - Placement, routing, DRC, or visual PCB review: [references/pcb-layout.md](references/pcb-layout.md)
 - Enclosure, PCB models, fit, drawings, or assembly: [references/mechanical-cad.md](references/mechanical-cad.md)
+- Physical reference, camera/ToF/probe capture, or manually measured geometry: read [references/reference-to-cad.md](references/reference-to-cad.md) before modeling, then follow the mechanical CAD workflow.
 - Bring-up, validation claims, manufacturing handoff, or release: [references/validation-release.md](references/validation-release.md)
 - Applying lessons from the USB DUT hub: [references/usb-dut-hub-lessons.md](references/usb-dut-hub-lessons.md). Its project values are examples, not defaults.
 

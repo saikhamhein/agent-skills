@@ -6,6 +6,10 @@ Identify the exact PCB/enclosure revisions, coordinate systems, units, approved 
 
 Keep the distinction between a fully parametric source and a native CAD document containing imported STEP solids with geometry-linked views/dimensions. The latter is useful and editable, but does not restore the original feature history. State the limitation and retain the original generator/source where available.
 
+## Establish measured geometry from a physical reference
+
+When authoritative geometry is missing or needs checking against a physical specimen, use [reference-to-cad.md](reference-to-cad.md) before fixing CAD dimensions. Record specimen identity, datums, raw measurements, registration, uncertainty, and confidence. Keep measured specimen geometry distinct from manufacturer limits and designed clearances. For physical-reference work, carry the measurement record and unresolved fit-critical checks through drawings and the release audit.
+
 ## Make the model trustworthy before dressing it up
 
 - Audit every fitted PCB reference against the current BOM, footprint, and model assignment. Track exact manufacturer models, package-equivalent models, dimensional proxies, and missing models separately.
