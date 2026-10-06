@@ -1,0 +1,4 @@
+interface:
+  display_name: "FFrames Motion Studio"
+  short_description: "Plan, animate, review, and render videos with FFrames"
+  default_prompt: "Use $fframes-motion-studio to create a storyboard and a reviewed FFrames video from my brief."
