@@ -1,0 +1,2 @@
+# Tested for the bundled compositing and atlas helpers, Python 3.11+.
+Pillow==12.3.0
