@@ -4,7 +4,7 @@
 
 Give each beat an explanatory verb: compare, place, open, pour, measure, look, predict or reveal. The character's gaze and hands should point to the object or relationship the viewer needs to notice. Avoid unrelated pointing, idle bobbing or a generic pose library repeated throughout a lesson.
 
-One action can need several poses: notice → prepare → contact → consequence → settle. Choose only the states that make that action legible. Compare silhouettes, head angle, hand activity and prop relationships across the whole storyboard. Repetition is useful for controlled comparisons and callbacks; record why it returns rather than banning reuse or demanding a fixed number of differences.
+One action can need several poses: notice → prepare → contact → consequence → settle. Plan those stages explicitly before deciding how many assets to generate; a few general reactions are identity references, not a replacement for action-specific states. Coordinate eye movement with the action using [the continuity guide](continuity.md). Choose only the states that make that action legible. Compare silhouettes, head angle, hand activity and prop relationships across the whole storyboard. Repetition is useful for controlled comparisons and callbacks; record why it returns rather than banning reuse or demanding a fixed number of differences.
 
 For an experiment, show the initial condition before the intervention and hold its result. Keep the measuring tool or object identity consistent. If a character is only an observer, their reaction must not imply that they caused the physical process.
 
@@ -33,7 +33,7 @@ As a starting experiment, hold action intermediates for roughly 0.15–0.3 secon
 | Eyelid/gaze only, same geometry | Generated facial states; optional localized optical flow | Pupil count, edge halos, closed eyes reopening |
 | New scene/viewpoint | Cut at a meaningful boundary | Attention target, orientation and explanatory continuity |
 
-Optical flow estimates pixel movement; it does not understand anatomy or recover hidden surfaces. Use it only for pairs already inspected as compatible. Normalize scale and facial/contact anchors first. If implemented, warp and blend with premultiplied alpha, inspect dense transition frames and switch to generated intermediate art if eyes or edges distort. Do not stretch an illustration to simulate a new hand pose. The bundled renderer does not implement optical flow, rigging or lip-sync.
+Optical flow estimates pixel movement; it does not understand anatomy or recover hidden surfaces. Use it only for pairs already inspected as compatible. Normalize scale and facial/contact anchors first. The bundled `morph_rgba_pair.py` estimates bidirectional flow, warps premultiplied-alpha pixels and blends compatible states. Inspect dense transition frames and switch to generated intermediate art if eyes or edges distort. Do not stretch an illustration to simulate a new hand pose. The standalone renderer does not call the morph helper automatically; feed its reviewed output frames to the native timeline or explicit standalone pose stages. Neither tool implements rigging or lip-sync.
 
 ## Generate separable, consistent assets
 

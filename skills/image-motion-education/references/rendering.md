@@ -1,6 +1,6 @@
 # Standalone rendering
 
-Use this path for standalone image animation. Existing native projects keep their renderer; see [project integration](project-integration.md). These helpers composite images and extract atlas cells. They do not generate artwork, synthesize narration, validate science, perform facial morphs or shape text.
+Use this path for standalone image animation. Existing native projects keep their renderer; see [project integration](project-integration.md). These helpers composite images and extract atlas cells. They do not generate artwork, synthesize narration, validate science, shape text or decide whether two facial states are compatible. The separate [facial helper](continuity.md) precomputes transparent in-between frames for reviewed compatible pairs.
 
 ## Runtime
 
@@ -11,7 +11,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r /path/to/image-motion-education/scripts/requirements.txt
 ```
 
-On Windows, use `.venv\Scripts\python.exe`. FFmpeg is a separately installed system/project dependency. OpenCV and a TTS service are optional, not installed by these commands.
+On Windows, use `.venv\Scripts\python.exe`. FFmpeg is a separately installed system/project dependency. These base commands do not install OpenCV or a TTS service. For the facial helper, use `scripts/requirements-flow.txt` in the virtual environment; see [continuity](continuity.md).
 
 Run helper tests from the skill folder with `python3 -m unittest discover -s tests -v`. They exercise synthetic fixtures, timing, fresh output protection, atlas margins and a complete FFmpeg encode/decode. They do not prove an ImageGen asset system, voice quality or lesson quality.
 

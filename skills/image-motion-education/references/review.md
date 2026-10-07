@@ -6,6 +6,8 @@ Make the explanation easy to follow before adding polish. Use the consuming proj
 
 Inspect the whole film at normal speed, then scrutinize transitions frame by frame where needed. A contact sheet alone cannot show a one-frame flash, a melted intermediate or exact synchronization. Use both scene samples and dense frames around pose/contact changes. A failed hand action needs a corrected state or transition, not more camera movement.
 
+Check the full action sequence, not only its beginning/end poses. For planned blinks inspect open, closing, closed, opening and open states; confirm that gaze reaches its target and settles without pupil duplication, fur swimming or sticker-border breathing. Inspect every short facial in-between at delivery size. The optical-flow helper’s success is not evidence of compatible anatomy.
+
 Check that gaze, contact and the consequence agree; objects do not duplicate or teleport; ground/contact anchors stay stable; mouths/eyes return to sensible states; and scene cuts preserve the viewer's understanding. Deliberate still holds are valid. Inspect whether the final composition answers the opening question and allows time to attempt the understanding check.
 
 ## Check repetition and progression

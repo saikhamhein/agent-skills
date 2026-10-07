@@ -8,6 +8,8 @@ Use the installed, pinned Motion Studio skill and native FFrames pipeline. Verif
 
 Illustrated PNG poses can become native media assets with an explicit timeline. Keep the fixed five-zone Myanmar Edu identity, faint grid, established palette roles, baselines and typography. Stage the illustration inside the diagram zone. A paper or painted character does not authorize a paper-textured background or a new title treatment. Preserve the concept-name opening for about one second within the requested runtime.
 
+Precompute compatible facial in-betweens with the bundled helper, then load the transparent PNG sequence as native media. Select one image per output frame during that transition; do not dissolve whole bodies in FFrames. Generated hand/body action states use their own stepped intervals. Keep their common canvas and anchor.
+
 Implement pose selection using integer, end-exclusive frame intervals. Apply transforms to a shared contact anchor. Keep equations, exact geometry, text and the physical state in Rust/SVG. Reuse the existing audio/caption pipeline. Do not install Pillow/OpenCV merely to assemble a lesson already supported by the native renderer.
 
 Use conversational Unicode Burmese and the current repository font tokens. As of the owner's 2026-10-07 selection, `identity::CURRENT_BURMESE` uses 50 px headline, 46 px second title line and 40 px captions at 1080×1920, Noto Sans Myanmar Regular/400. Mixed Latin/digits in those lines share the role's size and require the correct Latin font. Do not shrink captions or body text below the approved 40 px floor; rephrase/split and preserve reading time. Current project rules take precedence if these values change.
