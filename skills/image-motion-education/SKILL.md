@@ -5,7 +5,7 @@ description: Create illustrated educational animations from still-image characte
 
 # Image Motion Education
 
-Make the character demonstrate, observe or react to the idea being taught. Plan the performance before generating artwork. A camera move over one still is not a substitute for a changing action.
+Make the character demonstrate, observe or react to the idea being taught. Plan the performance before generating artwork. A camera move over one still is not a substitute for a changing action. Each return to an action should develop the explanation; do not recycle gestures, bounces, blinks or camera moves merely to fill time.
 
 ## Choose the production path
 

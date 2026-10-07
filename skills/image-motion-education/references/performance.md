@@ -8,6 +8,16 @@ One action can need several poses: notice → prepare → contact → consequenc
 
 For an experiment, show the initial condition before the intervention and hold its result. Keep the measuring tool or object identity consistent. If a character is only an observer, their reaction must not imply that they caused the physical process.
 
+## Avoid the feeling of a replay
+
+Track what changes from each beat's incoming state to its outgoing state: object position, evidence, relationship, result or the character's understanding. Carry that result forward. Replaying the same notice → gesture → reset cycle with a new caption creates apparent activity without advancing the lesson.
+
+Do not run a generic idle loop or attach the same bounce/settle, blink, point, zoom and sound cue to every pose change. Use a transition because that particular action needs it. Prefer a resolved still hold for reading or thinking. Changing the speed, crop or random jitter of the same gesture does not make it a new action.
+
+A return can be useful when its purpose is legible: a controlled comparison changes one relevant condition; a callback shows how the opening situation has been resolved; a genuine periodic process repeats because that is the science. Keep scientific cycles correct and consistent rather than perturbing them for novelty. A microscopic-motion model can continue during a reading hold, while the character stays quiet. End or redirect the shot once its explanatory job is complete.
+
+For any reused action, answer: “What does the viewer learn on this return that they could not learn from the previous one?” If nothing changes, cut or shorten it, hold the result, or design the next meaningful action. Neither constant motion nor constant novelty is required.
+
 ## Timing choices
 
 Keep delivery FPS separate from pose cadence. A 30 fps video can hold selected poses for several frames while a physical model moves continuously. Use a small number of deliberate action states and longer resolved holds; do not apply one low-FPS quantizer to captions, scientific motion and sound.

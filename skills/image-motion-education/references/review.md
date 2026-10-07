@@ -8,6 +8,12 @@ Inspect the whole film at normal speed, then scrutinize transitions frame by fra
 
 Check that gaze, contact and the consequence agree; objects do not duplicate or teleport; ground/contact anchors stay stable; mouths/eyes return to sensible states; and scene cuts preserve the viewer's understanding. Deliberate still holds are valid. Inspect whether the final composition answers the opening question and allows time to attempt the understanding check.
 
+## Check repetition and progression
+
+During whole-film playback, mark any moment that feels like a replay: the same gesture restarting, the same entrance rhythm, identical reaction/cue pairs, or repeated camera moves. Compare the action order as well as individual frames. Confirm that each return adds evidence, a changed condition or a resolved consequence; a changed caption alone is not enough.
+
+Review recurring scientific motion separately from character performance. Do not remove a necessary cycle or distort a model just to make it look different. Check that attention advances from observation to mechanism to consequence, and that a long shot still has a job. Remove decorative repetition before adding more animation. Contact sheets and duplicate-frame statistics cannot judge boredom or normal-speed rhythm; record the scope of playback actually reviewed.
+
 ## Read the text
 
 Inspect full-resolution glyph ink and normal-speed playback at a phone-like size. Verify every caption against the approved script, including punctuation, symbols, subscripts, units and Burmese combining marks. Measure visible text rather than assuming the card's height is its font size. Check the longest copy and maximum motion excursions. Rephrase or split before shrinking below the project's size floor.
