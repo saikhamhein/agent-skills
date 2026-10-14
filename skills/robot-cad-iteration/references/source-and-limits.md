@@ -16,6 +16,7 @@ These are journal-reported results, not independent reproduction of the author's
 
 ## Our implementation choices
 
-The iteration card, portable screenshot alternative, coherent-body checklist, explicit dependency mapping and smallest-risk physical prototype loop are original engineering synthesis for practical reuse. They are not copied author prompts, recovered code, or claims that the author ran the same procedure. No journal media, CAD assets or proprietary CAD engine are bundled.
+The iteration card, portable screenshot alternative, coherent-body checklist, explicit dependency mapping and smallest-risk physical prototype loop are original engineering synthesis for practical reuse. The approximately five-minute preview target, short visible rounds and reusable project-log template were added at the user’s request on 14 October 2026; they are not claimed as the author’s exact process or performance. They are not copied author prompts, recovered code, or claims that the author ran the same procedure. No journal media, CAD assets or proprietary CAD engine are bundled.
 
 Do not require the example robot's motor models, dimensions, materials, joint count, software stack or verification counts. Choose them from the current project. Do not claim SMLib or any CAD integration is available without checking the current environment. If explaining Astra specifically, distinguish an anecdotal account or builder preference from a controlled comparison; the journal is not evidence of model causality.
+

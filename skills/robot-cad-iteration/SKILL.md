@@ -1,6 +1,6 @@
 ---
 name: robot-cad-iteration
-description: Develop robot assemblies through short, source-backed CAD and visual-feedback iterations, keeping body design, mechanisms, packaging and physical prototype tests connected. Use for integrated robot CAD or repeated robot design revisions, not standalone PCB work or claims of validated locomotion.
+description: Develop robot assemblies through short, source-backed CAD and timeboxed visual-feedback iterations with a revision-linked project webpage, keeping body design, mechanisms, packaging and physical prototype tests connected. Use for integrated robot CAD or repeated robot design revisions, not standalone PCB work or claims of validated locomotion.
 ---
 
 # Robot CAD iteration
@@ -17,7 +17,19 @@ If editable sources are missing, continue with a clearly provisional concept or 
 
 For a new assembly, start with a simple complete layout: body envelope, actuator axes, link lengths, wheel/foot contacts, battery, compute and major harness volumes. Distinguish measured or supplier-backed geometry from provisional proxies. Check the silhouette and packaging together before detailing one component in isolation. For an existing design, preserve frozen interfaces and constrain the change instead of rebuilding the robot.
 
-Make the earliest useful deliverable visible: a full assembly with the affected area inspectable and a short statement of what is provisional. Do not wait for a polished report or a complete verification campaign before showing a design candidate. User review and engineering checks may proceed together, but neither substitutes for the other.
+## Keep the visible feedback loop short
+
+Aim for the first rough **complete-assembly preview in about five minutes** after starting usable design work. This is a soft target for reducing blind waiting, not a promise of completed engineering. Reuse the baseline, simple solids and existing rendering tools. If loading, missing inputs or broken geometry prevent a useful preview, report the actual blocker around that checkpoint with the last valid view clearly dated; do not hide the failure, fabricate a new view or silently spend thirty minutes polishing an unusable model.
+
+Work in short rounds, each with **one visible coherent change** and one clear review question. A coherent change may require several coordinated parts, supports or cable routes; do not artificially limit it to one body. Set the next preview checkpoint based on the current tool cost and keep the user informed if that changes. Stop after a direction-setting preview when acceptance is needed; continue independent work that does not depend on that choice.
+
+Before each preview, perform a quick sanity pass: build/recompute succeeds, intended bodies exist at plausible scale and placement, changed geometry is not visibly broken, and obvious clashes with immediate neighbors are exposed or resolved. Inspect the actual resulting whole assembly. If it is broken, show a diagnostic view labeled as such alongside the last valid baseline rather than presenting it as a viable candidate.
+
+Show the complete assembly plus a matching-camera before/after of the changed region, with source revision and provisional limits. Ask about the concrete design decision, not a generic “thoughts?” Do not wait for a polished report or exhaustive analysis. Run deeper fit, motion, load, tolerance and service checks after the direction is accepted, or earlier when a result is needed to judge feasibility or safety. Direction approval never replaces engineering acceptance, fabrication permission or the final checks below.
+
+## Keep a useful project webpage
+
+Maintain a compact project log alongside the design when this workflow is used for ongoing robot work. Read [project-log.md](references/project-log.md) for the latest-model view, revision images, changes, feedback and unresolved issues. Start from [project-log.html](assets/project-log.html) only if no suitable page already exists; updating the log must not delay the CAD preview. Keep it local/private unless sharing is authorized. The template is a static starting point, not a working CAD viewer or a published site.
 
 ## Model an integrated object
 
@@ -54,3 +66,4 @@ When the user wants a physical prototype, choose the smallest useful part, coupo
 Capture actual fit, access, deflection or failure evidence and change the appropriate parameter. Never fix a measured error by quietly moving unrelated interfaces. Keep CAD clearance, simulation output and physical measurements separate. If hardware is unavailable, deliver the test-ready source and the specific measurement or build action still needed; do not claim the physical loop happened.
 
 For each meaningful iteration, adapt [iteration-card.md](assets/iteration-card.md) into a short working record. Deliver editable source or generator, revision-matched review/export files, the changed result, checks actually run and the next physical question. A source-code generator is editable authority only when it reproducibly creates the delivered geometry; imported solids do not imply a recovered parametric feature history.
+
