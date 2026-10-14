@@ -24,6 +24,7 @@ Keep four kinds of information separate:
 
 - Requirements, architecture, components, or substitutions: [references/component-selection.md](references/component-selection.md)
 - Placement, routing, DRC, or visual PCB review: [references/pcb-layout.md](references/pcb-layout.md)
+- Integrated robot body/mechanism iterations and visual feedback: use the companion `robot-cad-iteration` skill when available; retain the mechanical validation below.
 - Enclosure, PCB models, fit, drawings, or assembly: [references/mechanical-cad.md](references/mechanical-cad.md)
 - Physical reference, camera/ToF/probe capture, or manually measured geometry: read [references/reference-to-cad.md](references/reference-to-cad.md) before modeling, then follow the mechanical CAD workflow.
 - Bring-up, validation claims, manufacturing handoff, or release: [references/validation-release.md](references/validation-release.md)
@@ -40,3 +41,4 @@ Read only the relevant references. Templates under [assets/templates](assets/tem
 - Preserve editable native sources and exact artifact provenance. Regenerate derivative drawings and manufacturing files from the frozen source revision; audit the complete release, including unchanged sections.
 
 Record conclusions, evidence, assumptions, and tradeoffs, not a private reasoning transcript. Share the useful result first, with the smallest specific blocker or next decision when needed.
+

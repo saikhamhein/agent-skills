@@ -1,0 +1,4 @@
+interface:
+  display_name: "Robot CAD Iteration"
+  short_description: "Turn robot CAD into testable physical iterations"
+  default_prompt: "Use $robot-cad-iteration to turn this robot design into a small, testable CAD iteration."
