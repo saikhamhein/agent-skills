@@ -1,11 +1,11 @@
 ---
 name: robot-cad-iteration
-description: Develop robot assemblies through short, source-backed CAD and timeboxed visual-feedback iterations with a revision-linked project webpage, keeping body design, mechanisms, packaging and physical prototype tests connected. Use for integrated robot CAD or repeated robot design revisions, not standalone PCB work or claims of validated locomotion.
+description: Develop robot assemblies through short, source-backed CAD and timeboxed visual-feedback iterations with a revision-linked project webpage, keeping body design, mechanisms and packaging connected with lightweight functional checks. Use for integrated robot CAD or repeated robot design revisions, not standalone PCB work or claims of validated locomotion.
 ---
 
 # Robot CAD iteration
 
-Turn the next design question into inspectable geometry and a practical test. Keep the user's design character and build objective intact. A review mesh, native assembly, simulation and built robot are different deliverables.
+Turn the next design question into inspectable geometry and a quick functional check. Keep the user's design character and build objective intact. A review mesh, native assembly, simulation and built robot are different deliverables.
 
 This skill is an original workflow informed by the Alpha Rolie journal, not its unreleased CAD tooling or an exact reproduction of the author's prompts. Read [source-and-limits.md](references/source-and-limits.md) when explaining the inspiration or model/tool claims.
 
@@ -25,7 +25,7 @@ Work in short rounds, each with **one visible coherent change** and one clear re
 
 Before each preview, perform a quick sanity pass: build/recompute succeeds, intended bodies exist at plausible scale and placement, changed geometry is not visibly broken, and obvious clashes with immediate neighbors are exposed or resolved. Inspect the actual resulting whole assembly. If it is broken, show a diagnostic view labeled as such alongside the last valid baseline rather than presenting it as a viable candidate.
 
-Show the complete assembly plus a matching-camera before/after of the changed region, with source revision and provisional limits. Ask about the concrete design decision, not a generic “thoughts?” Do not wait for a polished report or exhaustive analysis. Run deeper fit, motion, load, tolerance and service checks after the direction is accepted, or earlier when a result is needed to judge feasibility or safety. Direction approval never replaces engineering acceptance, fabrication permission or the final checks below.
+Show a clear complete-assembly preview early and after each meaningful change, plus a matching-camera before/after of the changed region when useful. Prefer an existing CAD-native or depth-buffered renderer for solid assemblies; avoid painter-sorted polygon plots such as Matplotlib Poly3D, which can misorder overlapping faces. Use readable solid shading and lighting; hide tessellation edges and fix triangle artifacts that obscure the shape. Inspect the rendered image, not just successful file creation. Label its source revision and provisional limits. Ask about the concrete design decision, not a generic “thoughts?” Do not delay the preview for a polished report, exhaustive analysis or a growing test suite. Direction approval does not automatically start a deeper review or establish engineering acceptance or fabrication permission.
 
 ## Keep a useful project webpage
 
@@ -35,9 +35,9 @@ Maintain a compact project log alongside the design when this workflow is used f
 
 - Anchor joints, load paths, mounting interfaces and occupied volumes in one coordinate system. Use named parameters and explicit units; keep joint ownership and limits inspectable in the authoritative assembly.
 - Tie the exterior to its purpose: supporting structure, cooling, cable protection, sensor sightlines and removable access. Develop silhouette, panel transitions and internals together. Do not cover an unresolved attachment with a floating cosmetic panel. Resolve unwanted gaps with supported transitions while preserving deliberate service seams; do not fuse removable panels merely to improve the render.
-- At each new shell segment or accessory, identify what supports it, how it fastens, how a tool reaches the fasteners, and what must move for service. Choose the service sequence for the combined assembly: first reachable fasteners, then disconnects, then a collision-free module exit. Prefer modest packaging growth over mutually blocked removal paths when service is required. A hidden-panel view explains geometry; it does not establish a removal path.
+- Give new shell segments or accessories plausible support and attachment, and notice obvious blocked fasteners or trapped modules near the change. Flag unresolved service access without expanding the iteration into a detailed assembly walkthrough. A hidden-panel view explains geometry; it does not establish a removal path.
 - Reserve real connector mates, cable bends, strain relief and movement envelopes before closing the skin. Do not render a decorative wire and call the harness solved.
-- Compare relevant poses and nearby parts, not only the neutral stance. Mark sampled-pose results as sampled; do not imply continuous collision freedom or load capability.
+- When a change affects motion, spot-check the relevant pose and nearby parts. Mark sampled-pose results as sampled; do not imply continuous collision freedom or load capability.
 
 If available, use the companion `electronics-hardware-design` skill for exact part identity, measurement-to-CAD, tolerance, fabrication and release details. When it is not installed, obtain those inputs directly and report unresolved critical dimensions; this skill does not depend on that installation.
 
@@ -49,15 +49,15 @@ Before revising, translate the feedback into a bounded geometry change and ident
 
 For an interactive viewer, treat selection, note persistence, revision binding and restoring views as actual functionality to test. Preserve drafts on save failure. Derive lightweight review geometry from the editable source and retain the mapping; a visually corrected mesh is not an editable CAD correction.
 
-## Verify the change without stalling the build
+## Check function without growing the process
 
-1. Regenerate the affected source and inspect geometry validity, exported part identity and placement. Check exported solid count and expected bounds as well as command success; an empty or partial export is a failure. Reopen a representative export; for the delivered assembly, reopen the actual delivered source/export, not an unrelated sample.
-2. Check the changed interfaces and neighbors: fit, interference, tool/fastener access, wiring, motion and service paths as applicable. Include assembly-level checks whenever a local change affects global loading, motion, wiring or removal.
-3. Inspect the updated complete assembly and useful sections from the same revision. Preserve outstanding contacts or inaccessible parts visibly in the result.
-4. Reuse prior evidence only where geometry, transforms, assumptions, tool versions and check scope still match. A successful run on a prior revision is not evidence for changed geometry.
-5. If the same operation fails twice, pause that route and diagnose the cause before retrying. Use a smaller disposable test when it can distinguish a tool problem from a design problem. Preserve the working baseline and incomplete state.
+Default to a quick functional check of the changed result: build/recompute succeeds, the intended geometry is present at plausible scale and placement, and the changed feature works in its immediate context without an obvious clash. For a delivered export, open that actual file and confirm it is not empty, partial or misplaced. Reuse existing checks where relevant; do not add or expand a test suite by default, chase pass counts, or turn each iteration into an audit.
 
-Use checks proportional to the iteration. Do not manufacture huge pass counts or paperwork in place of opening the model and checking the changed physical interfaces.
+Add a targeted check only for a concrete risk introduced by the change, such as a blocked connector, moving-part collision or unsupported load-bearing attachment. Keep the check proportional to that risk and report what remains unknown. A known safety or integrity problem must be exposed or resolved, never hidden to meet a preview target. Reuse prior evidence only while its geometry, transforms, assumptions and scope still apply.
+
+A detailed assembly/disassembly walkthrough starts **only when the user explicitly asks for it**. Do not start one merely because a design direction is accepted, a panel was added or this skill was invoked. When requested, trace reachable fasteners, disconnects and module exit paths in the combined assembly. Broader fit, motion, load, tolerance or service reviews are separate scoped work when requested or required to address an identified safety risk, not the default next phase. Do not claim build readiness from a quick check or a good-looking preview.
+
+If the same operation fails twice, diagnose before retrying that route. A small disposable probe may distinguish a tool problem from a design problem; it need not become a permanent test. Preserve the working baseline and clearly label incomplete results.
 
 ## Close the loop with something buildable
 
@@ -65,5 +65,6 @@ When the user wants a physical prototype, choose the smallest useful part, coupo
 
 Capture actual fit, access, deflection or failure evidence and change the appropriate parameter. Never fix a measured error by quietly moving unrelated interfaces. Keep CAD clearance, simulation output and physical measurements separate. If hardware is unavailable, deliver the test-ready source and the specific measurement or build action still needed; do not claim the physical loop happened.
 
-For each meaningful iteration, adapt [iteration-card.md](assets/iteration-card.md) into a short working record. Deliver editable source or generator, revision-matched review/export files, the changed result, checks actually run and the next physical question. A source-code generator is editable authority only when it reproducibly creates the delivered geometry; imported solids do not imply a recovered parametric feature history.
+For each meaningful iteration, keep a few factual lines in the project log; [iteration-card.md](assets/iteration-card.md) is an optional prompt, not a form to complete. Never delay the preview to fill it out. Deliver editable source or generator, revision-matched review/export files, the changed result, checks actually run and the next physical question. A source-code generator is editable authority only when it reproducibly creates the delivered geometry; imported solids do not imply a recovered parametric feature history.
+
 

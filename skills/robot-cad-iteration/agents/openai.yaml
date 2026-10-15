@@ -1,4 +1,5 @@
 interface:
   display_name: "Robot CAD Iteration"
-  short_description: "Turn robot CAD into testable physical iterations"
-  default_prompt: "Use $robot-cad-iteration to turn this robot design into a small, testable CAD iteration."
+  short_description: "Preview robot CAD with quick functional checks"
+  default_prompt: "Use $robot-cad-iteration to make one focused robot CAD change, show a clear whole-assembly preview early, and run a quick functional check."
+

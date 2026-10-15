@@ -1,20 +1,11 @@
-# CAD iteration card
+# CAD iteration note
 
-Use one short card per meaningful geometry/fit change. Omit irrelevant rows. This is a project working record, not a certification checklist.
+Optional prompts for a short project-log entry after a meaningful change. Use only what helps; do not fill every row or delay the preview.
 
-- **Goal / physical question:**
-- **Baseline source revision and current hardware:**
-- **What stays fixed / what may change:**
-- **Evidence:** measured dimensions, exact part drawings, annotated photos; mark inferred values.
-- **Preview checkpoint / actual elapsed time / blocker if missed:**
-- **Matching-camera before/after and project-log entry:** source revision and asset paths.
-- **One review question / user response:** keep direction approval separate from engineering acceptance.
-- **Geometry change:** named parameter/feature and expected effect.
-- **Build / export command and tool versions:**
-- **Review evidence:** revision-matched assembled view, critical section or underside, and useful detail.
-- **CAD checks actually run:** geometry validity, interference/clearance, assembly/tool/cable access; list actual result and units.
-- **Smallest physical test:** part/coupon, process/orientation/material, hardware, measurable acceptance condition.
-- **Observed result:** photos/measurements, fit/assembly issues, deformation or failure; unknown if untested.
-- **Decision:** keep, revise, or reject; next concrete change.
-- **Handoff:** editable sources, exports, checks and open assumptions all from the same revision.
+- **Goal / change:** named feature, baseline revision and interfaces kept fixed.
+- **Preview:** clear whole assembly, source revision and image path; matching before/after if useful.
+- **Quick functional check:** what actually ran and its result; note known limits or failures.
+- **Feedback / next decision:** original request, concrete review question and actual user response. Implemented does not mean accepted.
+- **Handoff:** editable source and delivered exports from the same revision, when applicable.
 
+Record a targeted risk check only when needed. Add physical-test evidence only for requested prototype work, and assembly-walkthrough findings only when the user explicitly requested that walkthrough. Unknown or untested is a valid status; this note must not trigger extra tests or reviews.
