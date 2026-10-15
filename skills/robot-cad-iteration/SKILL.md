@@ -1,6 +1,6 @@
 ---
 name: robot-cad-iteration
-description: Develop robot assemblies through short CAD and visual-feedback iterations, connecting body design, mechanisms and packaging with focused functional checks. Use for integrated robot CAD or repeated robot design revisions.
+description: Develop robot assemblies through short CAD and visual-feedback iterations, connecting body design, mechanisms and packaging with focused functional checks. Use for integrated robot CAD, repeated design revisions, or requested mechanism kinematics and dynamics.
 ---
 
 # Robot CAD iteration
@@ -17,15 +17,16 @@ Aim for a rough complete-assembly preview within a few minutes of usable design 
 
 ## Recommended tools
 
-Reuse a working CAD stack first. For a scriptable setup, this combination has been exercised for parametric solids, STEP round-trips and geometry-derived previews:
+Reuse a working CAD stack first. For a scriptable setup, the geometry and preview path below has been exercised for parametric solids and STEP round-trips. Simulation recommendations have separate capability checks:
 
 - **CadQuery with Python:** named parameters, B-rep solids, assemblies, Boolean/intersection checks, tessellation and STEP export/import. Keep the Python generator as the parametric authority and reopen the delivered STEP to check solids, validity, scale and placement.
 - **OpenCascade through CadQuery's OCP backend:** the solid-modeling kernel behind that path. Check the installed compatible backend rather than assuming another CAD kernel or proprietary integration is available; a separate low-level OCP implementation is usually unnecessary.
 - **Blender, with CPU Cycles when suitable:** readable shaded previews from tessellated actual CAD bodies. Transfer part names, units and transforms consistently. Keep rendering meshes derived from the same source revision; a polished render is neither editable B-rep authority nor engineering validation. Use the existing CAD-native renderer if it is simpler.
 - **Pillow, optionally:** arrange already-rendered views and add clearly labeled captions or review annotations. Preserve the geometry image; do not paint in missing parts or infer dimensions from altered pixels. It is a presentation aid, not a CAD engine.
-- **FreeCAD, optionally:** inspect STEP solids or keep them in a native document when that helps review. Imported solids do not recover the generator's parametric feature history. Check that the actual installation opens the file; do not require a GUI or new tool migration for a small revision.
+- **FreeCAD:** optional STEP/native-solid inspection; recommended Assembly workbench for requested joint-constrained mechanism kinematics. Ground the base, define the actual connections and drive the intended input through the solver. Verify the installed Assembly and simulation features first. Imported solids do not recover the generator's parametric history.
+- **MuJoCo:** recommended when the question needs rigid-body dynamics, actuation or contact. Build an explicit physics model with credible mass/inertia, joint, actuator and contact assumptions; a CAD mesh alone is not that model. See [mechanism-simulation.md](references/mechanism-simulation.md).
 
-The exercised baseline included CadQuery 2.7.0 with cadquery-ocp 7.8.1.1.post1, Blender 4.3.2, and FreeCAD 1.0.0 for native imported-solid reopen checks. These are reference versions, not required pins or a guarantee for other platforms. Verify available versions and run a small compatibility probe when changing the stack. Pillow was used for preview layout; no particular Pillow release is required by this workflow.
+The exercised baseline included CadQuery 2.7.0 with cadquery-ocp 7.8.1.1.post1, Blender 4.3.2, and FreeCAD 1.0.0 for native imported-solid reopen checks. The FreeCAD check covered imported solids, not Assembly simulation; MuJoCo is a recommendation, not a claim of a completed test here. These are reference versions, not required pins or a guarantee for other platforms. Verify available versions and run a small compatibility probe when changing the stack. Pillow was used for preview layout; no particular Pillow release is required by this workflow.
 
 All engineering previews must come from the actual model. Generated concept imagery may explore style when requested, but cannot stand in for CAD geometry or verification. None of these tools establishes physical fit, strength or safe operation on its own.
 
@@ -46,6 +47,10 @@ If the same operation fails twice, diagnose before repeating it. A disposable pr
 - Reserve actual connector mates, cable bends, strain relief, sensor sightlines and movement envelopes before closing the skin.
 - Spot-check changed motion against neighboring parts. Note unresolved access or collision issues without expanding a small revision into a whole-system audit.
 - For exact part identity, measurement, tolerance or release work, consult the companion electronics skill if available, or obtain the required inputs directly.
+
+## Simulate mechanisms when the task needs it
+
+Use simulation when the user asks or the requested functional question needs it; do not add it to every model. Start with the smallest working joint chain and one short input sweep. Distinguish prescribed animation (assigned poses), solved kinematics (joint constraints determine motion), and dynamics (forces, inertia and contacts determine response). Choose FreeCAD Assembly for the kinematic question and MuJoCo for the dynamics question; keep CadQuery/native CAD as geometry authority. Read [mechanism-simulation.md](references/mechanism-simulation.md) for setup and evidence boundaries. Simulation does not authorize a full assembly walkthrough or physical actuation.
 
 ## Show the result and use feedback
 
