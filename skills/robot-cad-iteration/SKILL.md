@@ -15,6 +15,16 @@ For a new concept, lay out the body envelope, actuator axes, links, contacts, ba
 
 Aim for a rough complete-assembly preview within a few minutes of usable design work. Adapt that checkpoint to tool cost; report a real blocker rather than silently polishing for a long stretch. Each round should have one coherent visible change and one clear review question. Coordinated changes across several parts are fine when they answer the same question.
 
+## Make changes visible, without slowing the loop
+
+The user cannot inspect every detail or infer every change from a render. Be proactive about improvements and explicit about their consequences; do not rely on the user to catch design drift.
+
+Before a consequential visible or functional change, briefly flag **what will change, why, and the impact**. If it changes agreed design direction, fixed interfaces, scope or a consequential assumption, get the user's decision before implementing that departure. Surface an unexpected dependency or unplanned drift as soon as it is discovered, not later in a journal. Continue ordinary work within the approved scope without repeated approval requests.
+
+With every preview, include a short **Changes since previous review** summary against an identified review revision. Include incidental changes required to fulfill the request, not just the requested feature. Prioritize changes to dimensions/form factor, parts and mounts, orientation/placement, mass/material, joints and assumptions when affected. Group low-impact details in a revision-linked artifact beside the CAD; do not overwhelm the user with bit-by-bit noise. A first preview establishes the baseline and states its assumptions.
+
+Before committing or handing off a revision, reconcile that summary with the actual source/model and structured part-manifest differences. A handwritten log is not evidence that every change was captured. State what was mechanically checked and what remains unchecked; never claim "no other changes" without evidence covering that claim. Read [change-review.md](references/change-review.md) for the compact comparison method. This is part of the existing preview loop, not a separate audit phase.
+
 ## Recommended tools
 
 Reuse a working CAD stack first. For a scriptable setup, the geometry and preview path below has been exercised for parametric solids and STEP round-trips. Simulation recommendations have separate capability checks:
@@ -62,7 +72,7 @@ An interactive viewer is optional. If requested, test its real selection, note p
 
 ## Keep the handoff light
 
-A preview, brief change note, focused check result and next question usually suffice. For ongoing work, reuse a compact revision log; [project-log.md](references/project-log.md), [project-log.html](assets/project-log.html) and [iteration-card.md](assets/iteration-card.md) are optional aids. Do not build or update a webpage at the expense of the next useful preview.
+A preview, brief changes-since-review summary, focused check result and next question usually suffice. Keep the supporting change comparison beside the revision's CAD, without making the user read it to learn about consequential changes. For ongoing work, reuse a compact revision log; [project-log.md](references/project-log.md), [project-log.html](assets/project-log.html) and [iteration-card.md](assets/iteration-card.md) are optional aids. Do not build or update a webpage at the expense of the next useful preview.
 
 When a physical prototype is wanted, choose the smallest coupon, part or subassembly that tests the riskiest assumption. Establish the mating hardware, fabrication process and observable success condition, then obtain any required authorization. Record actual fit, deflection or failure and revise the responsible parameter. Keep CAD clearance, simulation and physical evidence distinct.
 

@@ -5,9 +5,12 @@ Use a log when it helps an ongoing design stay understandable. Reuse an existing
 ## Minimum useful entry
 
 - Source revision and a clear whole-assembly preview
-- What changed and the question it answers
+- Changes since the identified previous review, including incidental changes, their reason/impact and the question they answer
+- Link to the source/model/part-manifest comparison beside the CAD, with mechanically checked versus unchecked coverage
 - Focused check result and any important unknown
 - Feedback or the next decision
+
+Keep the user-facing summary short and high-impact. Surface changed assumptions, scope or unplanned drift immediately; recording them here is not a substitute for notification or a required decision. Follow [change-review.md](change-review.md) to reconcile the note against actual differences before commit or handoff.
 
 Add matching-camera before/after views, part annotations or export links when they help. Keep accepted direction separate from validated engineering. Record actual results and failures; do not invent a progress history.
 
