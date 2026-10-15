@@ -1,6 +1,6 @@
 # Translate motion direction to native FFrames
 
-Target the project's pinned FFrames version, currently 1.2.0 for Myanmar Science Visuals. Use its existing generator and backend instead of bootstrapping an unrelated rendering stack. Read the [official skill](https://github.com/dmtrKovalenko/fframes/blob/v1.2.0/skills/fframes-video/SKILL.md), [API guide](https://github.com/dmtrKovalenko/fframes/blob/v1.2.0/skills/fframes-video/references/api.md), and [Rust API](https://docs.rs/fframes/1.2.0/fframes/) for exact signatures. The references below guide translation; they are not a replacement crate/template.
+Target the consuming project's pinned FFrames version. These examples reference version 1.2.0. Use its existing generator and backend instead of bootstrapping an unrelated rendering stack. Read the [official skill](https://github.com/dmtrKovalenko/fframes/blob/v1.2.0/skills/fframes-video/SKILL.md), [API guide](https://github.com/dmtrKovalenko/fframes/blob/v1.2.0/skills/fframes-video/references/api.md), and [Rust API](https://docs.rs/fframes/1.2.0/fframes/) for exact signatures. The references below guide translation; they are not a replacement crate/template.
 
 | Source concept | Native implementation |
 | --- | --- |

@@ -2,6 +2,8 @@
 
 Use this workflow to reconstruct a board, enclosure, plate, or mating interface from an available specimen. Start with a flat support, calipers/ruler, annotated photos, and a simple fixture. Add camera, depth sensing, or a motion stage only where it reduces capture effort or reaches otherwise inaccessible features.
 
+For a quick concept, measure the critical envelope or interface first and build a provisional model immediately. Add capture automation and independent checks only where the fit margin or next commitment requires them. The full workflow below supports precision reconstruction; it is not a prerequisite for sketching approximate geometry.
+
 ## Workflow map
 
 1. Define the fit decision and specimen.
@@ -64,7 +66,7 @@ For holes, use fitted pins where available: equal-pin outside span minus pin dia
 
 ## 5. Bound uncertainty and tag confidence
 
-- Take at least 3 independent readings of each critical feature, releasing/reseating the tool between readings. For an automated setup, repeat after re-homing or re-fixturing at least once. Record raw values and min/max; increase repetitions or change method if readings disagree enough to affect fit.
+- For tight fit decisions, take repeated independent readings of critical features, releasing/reseating the tool between readings; three is a practical starting point. For an automated setup, repeat after re-homing or re-fixturing at least once. Record raw values and min/max; increase repetitions or change method if readings disagree enough to affect fit.
 - Separate repeatability from likely bias: instrument scale/zero, jaw or probe contact, lens/perspective, surface-dependent depth bias, stage backlash, fixture movement, and registration. Repeated readings alone cannot establish accuracy.
 - Record a conservative working interval `value_mm +/- bound_mm`. Use an applicable instrument/setup accuracy bound plus observed variation and registration/contact allowances, without double-counting terms already covered. For a simple DIY estimate, sum plausible bounds rather than assuming independent statistical errors. Label it an engineering bound with its basis, not a certified confidence interval.
 - Propagate bounded intervals through derived geometry. For a difference, add the input bounds conservatively; retain correlations if established rather than inventing precision. For rotations/nonlinear constructions, check extremal cases or sweep the permitted input ranges.
@@ -98,7 +100,7 @@ Treat the row as a format example, not a default dimension or tool capability.
 
 ## 7. Hand off to parametric CAD and test the fit
 
-1. Freeze a measurement-record revision. Pass specimen identity, datums/transforms, tagged feature table, raw evidence, inferred constraints, and unresolved checks to the CAD task.
+1. Identify the measurement-record revision used for this iteration; freeze it for a committed handoff. Pass specimen identity, datums/transforms, tagged feature table, raw evidence, inferred constraints, and unresolved checks to the CAD task.
 2. Create named parameters for measured nominal geometry, uncertainty bounds, supplier/process tolerances, and intended clearance. Link critical parameters to feature IDs. Preserve measurements even when selecting a different design nominal.
 3. Constrain functional planes, mounting patterns, and mating interfaces first. Build a conservative keep-out envelope for uncertain bodies/projections. Add inferred curves, symmetry, and styling after critical fit is stable; do not let cosmetic constraints move measured interfaces.
 4. Evaluate worst-case fit using intervals and fabrication allowances. For centered openings, include feature-position error on each side in addition to body size. For hole patterns, assess relative positions and actual fastener float rather than treating each diameter alone.

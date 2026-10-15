@@ -1,5 +1,7 @@
 # Validation, controlled changes, and release
 
+Use focused checks during exploration; use the complete release sections only for an actual manufacturing/release handoff or when a concrete risk calls for them. A draft may carry explicit unknowns without a formal waiver. Resolve safety-critical unknowns before physical operation; obtain acceptance for consequential prototype deviations before committing the build.
+
 ## Use precise claims
 
 Keep these outcomes separate:
@@ -23,9 +25,9 @@ For a narrow ECO, build an affected-check list and compare against the exact bas
 | Enclosure/fastener/model change | Transforms, tolerance/interference, conductive hardware, access/sequence, drawings, relevant physical tests |
 | Tool/library/exporter change | Regenerated geometry/net/pin parity, units/origins/rotations, report settings, readable/editable native files |
 
-These are review prompts, not permission to skip interacting risks. Record the reason a check is unaffected. Preserve unrelated approved sources and content. For unchanged manufacturing geometry, compare parsed geometry or metadata-normalized output as appropriate; don't erase meaningful metadata merely to make hashes match.
+These are review prompts, not permission to skip interacting risks. Explain excluded checks when their relevance is reasonably in doubt; do not create a checklist of every unaffected subsystem for a small edit. Preserve unrelated approved sources and content. For unchanged manufacturing geometry, compare parsed geometry or metadata-normalized output as appropriate; don't erase meaningful metadata merely to make hashes match.
 
-## Close design gates with evidence
+## At release, close applicable design gates with evidence
 
 - Requirements and approved decisions traced to calculations, selected parts, and constraints
 - Pin/net assertions and symbol/footprint/package mapping independently checked where risk warrants it
@@ -56,7 +58,7 @@ Prototype exceptions need explicit acceptance, affected revision/build, residual
 
 ### Optional release inventory helper
 
-Use Python 3.10+ and copy [release-manifest.json](../assets/templates/release-manifest.json) into a release staging directory. Fill in the actual source revision, required roles, artifact paths and SHA-256 values, and justified omissions. Each artifact describes material from the declared frozen design revision; external source documents can be referenced in evidence instead of being silently mixed into that claim.
+Use Python 3.10+ and copy [release-manifest.json](../assets/templates/release-manifest.json) into a release staging directory. Set required roles to the actual handoff scope, then fill in the source revision, artifact paths and SHA-256 values, and justified omissions. The template shows a broad combined electrical/mechanical release, not required paperwork for every task. Each artifact describes material from the declared frozen design revision; external source documents can be referenced in evidence instead of being silently mixed into that claim.
 
 Run from any working directory:
 

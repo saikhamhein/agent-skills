@@ -13,7 +13,7 @@ python3 -m venv .venv
 
 On Windows, use `.venv\Scripts\python.exe`. FFmpeg is a separately installed system/project dependency. These base commands do not install OpenCV or a TTS service. For the facial helper, use `scripts/requirements-flow.txt` in the virtual environment; see [continuity](continuity.md).
 
-Run helper tests from the skill folder with `python3 -m unittest discover -s tests -v`. They exercise synthetic fixtures, timing, fresh output protection, atlas margins and a complete FFmpeg encode/decode. They do not prove an ImageGen asset system, voice quality or lesson quality.
+When changing helper behavior or diagnosing an environment problem, run helper tests from the skill folder with `python3 -m unittest discover -s tests -v`. They exercise synthetic fixtures, timing, fresh output protection, atlas margins and a complete FFmpeg encode/decode. They do not prove an ImageGen asset system, voice quality or lesson quality.
 
 ## Transparent atlas inspection and extraction
 
@@ -53,7 +53,7 @@ Paths resolve relative to the JSON spec. Supply actual raster assets; this examp
 }
 ```
 
-For a background image, add `canvas.background_asset`; its pixel dimensions must equal the canvas. Prepare the composition intentionally before rendering. This standalone example does not reproduce the Myanmar Edu zones; use that project's native template there.
+For a background image, add `canvas.background_asset`; its pixel dimensions must equal the canvas. Prepare the composition intentionally before rendering. Adapt this example to the requested composition and any existing design system.
 
 - `duration * fps` must be an integer frame count. Express event times as frame index divided by FPS. Intervals include the start and exclude the end.
 - Character stages begin at 0, have unique starts and last until the next stage or video end. `x` is image center, `bottom` is the transformed image's bottom edge, and `scale` must be positive. These are **image coordinates**, not detected feet or elbows.

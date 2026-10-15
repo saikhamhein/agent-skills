@@ -1,28 +1,28 @@
-# Revision-linked robot project webpage
+# Lightweight revision log
 
-The log is a review surface for the real design, not a second CAD model or a substitute for showing progress in chat. Reuse the existing project page, assets and viewer when possible. A local HTML file or private project preview is sufficient; creating a public website, changing access or exposing private CAD requires the appropriate authorization. A private repository does not automatically make a deployed page private. Verify actual hosting access before sharing.
+Use a log when it helps an ongoing design stay understandable. Reuse an existing page or a short local document; do not create a website or viewer just to satisfy this workflow. A log should take less effort than the change it records.
 
-## Keep the page lightweight
+## Minimum useful entry
 
-For an ordinary iteration, a clear whole-assembly preview, revision, brief change note, quick functional result and next decision are enough. Add the details below only when relevant; they are not mandatory fields or a trigger for extra tests, an assembly walkthrough or viewer development. Update at preview handoff and never hold the preview for log work.
+- Source revision and a clear whole-assembly preview
+- What changed and the question it answers
+- Focused check result and any important unknown
+- Feedback or the next decision
 
-## Useful page content
+Add matching-camera before/after views, part annotations or export links when they help. Keep accepted direction separate from validated engineering. Record actual results and failures; do not invent a progress history.
 
-1. **Latest review:** whole-assembly image, exact source revision/branch, build/export time and status (provisional, ready for review, accepted direction, or incomplete/blocked). Name the authoritative native assembly separately when it differs from the review candidate.
-2. **Model access:** a real rotatable model if the environment can serve it, plus native source/export links within permitted access. Bind each model asset to its generating CAD revision, units and coordinate transform. If an embedded viewer is unavailable, use actual static views or a recorded orbit and say so. When rotation was requested, mark this as partial fulfillment and keep the viewer request unresolved. Never display inert rotate controls, an empty canvas, a placeholder mesh or an unrelated older model as a working current viewer.
-3. **Revision log:** newest first, one entry per real meaningful iteration. Record date, revision, goal, changed geometry, fixed interfaces, same-view before/after images and the review question. Preserve previous entries rather than replacing history with the latest render.
-4. **Feedback:** original note, referenced part/location/view/revision, current disposition and the user's response when received. “Implemented” is not “accepted.” A static page may link back to the actual feedback conversation; do not show a nonfunctional submit form. Real comment systems need tested persistence and authorization.
-5. **Evidence and unresolved issues:** checks actually run, their scope and source revision; untested physical claims; known clashes, service limits and blocked operations; next small test or decision. Include genuine failed attempts when consequential, with their outcome. Never invent an attractive history of progress.
+## Keep evidence attached to the right revision
 
-## Freshness and publishing discipline
+Update the latest-view pointer only after the new asset opens and matches its source. If export fails, retain the last valid view with its older revision and label the new attempt incomplete. Reuse check results only while the relevant geometry and assumptions remain unchanged.
 
-- On each visible iteration, update the latest-review pointer and append the entry from the same source revision. Keep a compact asset record: source revision/hash, generator/export command, build time, image/model path, view and check result. The iteration card can supply this; no separate database is required.
-- Replace “current” assets only after they open and match the intended revision. If export fails, retain the last valid assets labeled with their older revision and show the new revision as blocked. Do not silently pair new prose with stale images or reuse a check on changed geometry.
-- Keep before and after images on the same framing, pose, visibility and scale, or explicitly describe why they differ. Captions identify both revisions. Surface whether a view hides panels; visibility is not removal evidence.
-- Verify source/model/download links resolve for the intended viewer. Check model loading, rotation and reset if interactive; spot-check image readability and layout in the actual delivery view. Expand browser/device testing only for a reported issue or requested review. Do not claim these interactions were tested when only HTML or asset existence was checked.
-- Keep editing cheap: update the log at preview handoff, not after every CAD command. Prefer a short factual entry over design polish. If the page build blocks progress, send the real images and revision summary directly, then repair the log without stalling CAD.
+For feedback, keep the original note with its part, view and revision. Mark it implemented, superseded or unresolved; only the user can establish their acceptance. A screenshot annotation is often enough.
 
-## Using the bundled template
+## Optional interactive page
 
-`assets/project-log.html` is a self-contained, responsive static shell with explicit empty states and no external scripts, telemetry or fake controls. Copy it into the project's log directory and replace its empty states with real project evidence. Add accessible figures/captions and real links only when those assets exist. Duplicate the revision article for actual iterations. Add an embedded model viewer only when supported and tested; otherwise retain labeled static/orbit review. Remove template guidance from the finished project page. Do not publish the empty template as a completed project log.
+The [HTML template](../assets/project-log.html) provides static empty states, not a model viewer. Replace them with real evidence and remove unused sections. Do not present the unfilled template as completed work.
 
+When an interactive viewer is requested and supported, bind the review mesh to its native source and check actual model loading, rotation, selection and note persistence as applicable. If unavailable, give labeled static views or an orbit video and explain the missing requested interaction. Avoid fake controls and inert forms.
+
+Verify links and intended access before sharing. A private repository does not make a separately deployed page private; publication needs the relevant authorization. Keep the log local when public access is unnecessary.
+
+If log work blocks progress, send the actual preview and short update directly. Repair the log later without holding up CAD.

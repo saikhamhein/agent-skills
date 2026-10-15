@@ -43,7 +43,7 @@ timing separately from stepped body action and exact scientific state.
 | New camera or scene | A motivated scene cut |
 
 A shared character identity alone does not make a pair safe. Do not morph between
-the cat’s seated, crouching and raised-paw identity poses. Generate compatible
+a character’s seated, crouching and raised-hand identity poses. Generate compatible
 face-only variants of the particular scene pose first. Never crossfade incompatible
 whole bodies to hide a pose change. If a trial makes eyes smear, fur swim or the
 white sticker border breathe, use better aligned/generated states.
@@ -91,12 +91,12 @@ index. Face transitions can run at delivery FPS while body steps have longer
 holds; captions and scientific trajectories keep their own timing. For the
 standalone renderer, list the precomputed images as explicit pose stages. Neither
 renderer calls this helper automatically. Do not generate a motion proof or full
-video while the owner has paused rendering or requested assets only.
+video when the request is limited to assets.
 
 ## Review before expanding the film
 
-When rendering is authorized, prove one complete action and its facial performance
-in a short clip. Inspect every short facial intermediate plus both sides of each
+When testing facial continuity, render one complete action and the relevant facial
+transition in a short clip. A simple body-action draft does not need a facial system. Inspect every short facial intermediate plus both sides of each
 body-pose switch, and watch normal-speed playback. Check eye count and reopening,
 gaze target, muzzle and whiskers, sticker-border stability, body/contact anchors,
 prop identity and the changed final state. Full sequence review matters: attractive

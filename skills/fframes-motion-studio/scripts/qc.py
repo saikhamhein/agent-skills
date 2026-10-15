@@ -90,11 +90,11 @@ def inspect(video, plan, out):
          '-frames:v', '1', str(sheet)])
     if not sheet.is_file():
         raise RuntimeError('Contact sheet was not created')
-    manual = ['Inspect the full-resolution Burmese/other text and glyph shaping on the chosen backend.',
-              'Review scientific models, units, sources, simplifications and understanding check.',
+    manual = ['When text is present, inspect full-resolution glyphs and shaping for its actual language.',
+              'For educational/scientific content, review relevant models, units, sources, simplifications and learning checks.',
               'Watch the entire encoded video; check scene boundaries, pacing, safe areas and captions.',
-              'Listen for narration intelligibility, clicks, music balance and caption sync.',
-              'Read native FFrames inspect/timeline reports; encoded-file checks do not replace them.']
+              'When audio is present or required, listen for intelligibility, clicks, balance and relevant caption sync.',
+              'For native FFrames output, use inspect/timeline reports when needed to resolve layout or timing questions.']
     status = ('fail' if any(c['status'] == 'fail' for c in checks) else 'review_required')
     with video.open('rb') as handle:
         digest = hashlib.file_digest(handle, 'sha256').hexdigest()

@@ -1,6 +1,6 @@
 # Review the actual animation
 
-Make the explanation easy to follow before adding polish. Use the consuming project's review records and approval rules.
+Make the explanation easy to follow before adding polish. For a draft, watch the smallest changed clip and check the behavior at risk, then use feedback to iterate. Apply the full review below to a release candidate; do not block the first shot on a complete audit. Use any existing review records and approval rules.
 
 ## Watch the action
 
@@ -18,7 +18,7 @@ Review recurring scientific motion separately from character performance. Do not
 
 ## Read the text
 
-Inspect full-resolution glyph ink and normal-speed playback at a phone-like size. Verify every caption against the approved script, including punctuation, symbols, subscripts, units and Burmese combining marks. Measure visible text rather than assuming the card's height is its font size. Check the longest copy and maximum motion excursions. Rephrase or split before shrinking below the project's size floor.
+Inspect full-resolution glyph ink and normal-speed playback at a phone-like size. Verify every caption against the approved script, including punctuation, symbols, subscripts, units and script-specific details such as Burmese combining marks when applicable. Measure visible text rather than assuming the card's height is its font size. Check the longest copy and maximum motion excursions. Rephrase or split before shrinking below the project's size floor.
 
 Check the actual platform overlay separately when available. A caption covered by player controls in a browser screenshot is evidence of that playback state, not proof that the encoded video itself is cropped. Do not claim a phone check or fluent language review that was not performed.
 
@@ -36,4 +36,4 @@ Compare measured dimensions, FPS, frame count and duration against the final pla
 
 When audio exists, measure loudness/peaks with FFmpeg `ebur128=peak=true` or the project's QC tool and listen through the full encoded mix. Check complete narration, pronunciation, pauses, synchronization, harsh cues and music masking speech. Follow the project's loudness targets; no single number guarantees intelligibility. If audio cannot be heard, report that limitation rather than inferring success from stream metadata.
 
-Keep source claims, model accuracy, language, rights, technical output and owner approval distinct. Save actual findings and the final artifact hash. Do not treat a successful encode, static test fixture, or helper test as a finished educational video. Deliver approved media under the existing project handoff without adding extra gates.
+Keep source claims, model accuracy, language, rights, technical output and requested approval distinct. Save actual findings and the final artifact hash. Do not treat a successful encode, static test fixture, or helper test as a finished educational video. Deliver approved media under the existing project handoff without adding extra gates.

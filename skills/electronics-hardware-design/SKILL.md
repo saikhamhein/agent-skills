@@ -1,44 +1,40 @@
 ---
 name: electronics-hardware-design
-description: Select and qualify electronic components, organize PCB placement and routing, develop CAD-linked mechanical designs, measure physical references for parametric CAD, and prepare traceable hardware releases. Use for board-level electronics with or without an enclosure, including physical-reference reverse engineering, reviews, and revisions of an existing design.
+description: Select electronic components, design and revise PCB layouts, develop CAD-linked mechanical designs, measure physical references, and prepare hardware for testing or manufacturing. Use for board-level electronics with or without an enclosure.
 ---
 
 # Electronics hardware design
 
-Turn requirements into reviewable design evidence and a reproducible release. Work at the requested depth; a component comparison does not authorize board redesign, procurement, fabrication, or publication.
+Move fast, break things in reversible design experiments, and learn from the result. Start with a useful draft, not a release audit. Keep electrical hazards, physical damage, manufacturing commitments, and unsupported performance claims outside that experimentation budget.
 
-## Start with the current baseline
+## Default loop: build, inspect, adjust
 
-Identify the requested outcome, authoritative editable sources, exact revision, approvals, ordered or otherwise frozen geometry/BOM, and available tools. Inspect the actual files before proposing changes. If sources cannot be recovered, stop dependent editing and report what is missing; do not silently reconstruct or substitute an older revision.
+1. Identify the requested outcome and current editable sources. For a revision, inspect the actual baseline and frozen interfaces; for a new concept, state the few assumptions needed to start.
+2. Choose the smallest useful increment: a power-tree sketch, candidate comparison, one circuit block, rough placement, or a fit coupon. Use a branch/copy or parameters that make changes easy to reverse.
+3. Produce an early visible result. Label provisional geometry, parts, and performance honestly. Do not wait for full qualification, complete sourcing, polished drawings, or a release manifest to show an exploratory draft.
+4. Run checks tied to what changed and what could fail next. Resolve a wrong pinout before wiring, dangerous voltage before powering, or uncertain fit before ordering; keep unrelated checks out of the loop.
+5. Share the result, the meaningful uncertainty, and the next useful experiment. Iterate within the requested scope. Broaden verification when coupling, concrete risk, or release warrants it.
 
-For a narrow revision, identify the affected checks and use semantic/geometry diffs to preserve unrelated approved content. Do not restart the entire new-design workflow just to correct a label, substitute a qualified part, or replace a drawing sheet.
+A component comparison does not authorize board redesign, procurement, fabrication, or publication. Preserve approved/ordered geometry and seek missing authorization before changing it. If authoritative source files are missing, do independent comparisons or clearly labeled concepts; do not silently substitute a reconstructed baseline.
 
-Keep four kinds of information separate:
+## Read only the relevant guidance
 
-1. **Engineering requirements:** interface, electrical, thermal, mechanical, safety, manufacturing, and test constraints derived from this design and current authoritative sources.
-2. **Sai's design defaults:** read [references/sai-defaults.md](references/sai-defaults.md) when working for Sai. Apply where feasible; expose conflicts instead of silently compromising engineering.
-3. **Project decisions:** approved dimensions, MPNs, stackup, costs, and geometry for the current project only. Recalculate for a new project.
-4. **Accepted waivers:** bounded prototype exceptions with an owner, risk, evidence, and closure condition. A previous waiver is never a general design rule.
+- Starting a concept or choosing practical defaults: [practical-defaults.md](references/practical-defaults.md)
+- Components or substitutions: [component-selection.md](references/component-selection.md)
+- Placement, routing, and copper review: [pcb-layout.md](references/pcb-layout.md)
+- Enclosures, fit, drawings, and assembly: [mechanical-cad.md](references/mechanical-cad.md)
+- Measured physical references: [reference-to-cad.md](references/reference-to-cad.md)
+- Bring-up, validation claims, or manufacturing handoff: [validation-release.md](references/validation-release.md)
+- Short reusable engineering examples: [engineering-examples.md](references/engineering-examples.md)
 
-## Choose the relevant workflow
+Use templates under [assets/templates](assets/templates) only when they reduce work. They are optional records, not prerequisites for iteration. For robot body/mechanism work, the companion `robot-cad-iteration` skill may help if available.
 
-- Requirements, architecture, components, or substitutions: [references/component-selection.md](references/component-selection.md)
-- Placement, routing, DRC, or visual PCB review: [references/pcb-layout.md](references/pcb-layout.md)
-- Integrated robot body/mechanism iterations and visual feedback: use the companion `robot-cad-iteration` skill when available; retain the mechanical validation below.
-- Enclosure, PCB models, fit, drawings, or assembly: [references/mechanical-cad.md](references/mechanical-cad.md)
-- Physical reference, camera/ToF/probe capture, or manually measured geometry: read [references/reference-to-cad.md](references/reference-to-cad.md) before modeling, then follow the mechanical CAD workflow.
-- Bring-up, validation claims, manufacturing handoff, or release: [references/validation-release.md](references/validation-release.md)
-- Applying lessons from the USB DUT hub: [references/usb-dut-hub-lessons.md](references/usb-dut-hub-lessons.md). Its project values are examples, not defaults.
+## Keep the evidence honest
 
-Read only the relevant references. Templates under [assets/templates](assets/templates) support concise decision/evidence records; adapt them to the work instead of creating unused paperwork.
+- Distinguish requirements, provisional defaults, project decisions, and explicitly accepted prototype exceptions. A previous design or waiver does not establish a new requirement.
+- Use exact part/package identities and current manufacturer limits before committing dependent engineering. Check current fabricator capabilities before finalizing manufacturing geometry; refresh price/stock before purchasing.
+- Check electrical, geometric, assembly, and physical behavior separately when relevant. A render or clean DRC does not establish working hardware. State what was calculated, inspected, measured, or remains untested.
+- Use current-limited, protected bring-up and safe fault-test plans. Resolve hazardous uncertainty before energizing equipment or exposing people to it.
+- Preserve native editable sources. At release, regenerate requested derivatives from the identified revision and check the delivered packet's integrity and completeness.
 
-## Non-negotiable handoffs
-
-- Support parts, footprints, models, and production files with exact identity and revision evidence. A family name, distributor thumbnail, attractive render, or clean DRC is insufficient.
-- Use current manufacturer datasheets and relevant application notes for design limits, and the selected fabricator/assembler's current capability data for manufacturing rules. Record URLs, revisions/dates, and the conditions used. Reconfirm price, stock, and supplier availability at purchasing time.
-- Obtain missing approval before changing frozen/ordered design intent or expanding scope. Resolve ambiguous component identity, polarity, voltage domain, return path, clearance, or geometry before dependent release work.
-- Validate electrical, geometric, assembly, visual, and physical behavior separately. State what passed, what remains untested, and what is waived. Never turn “zero DRC errors” or “released for prototype” into “validated hardware.”
-- Preserve editable native sources and exact artifact provenance. Regenerate derivative drawings and manufacturing files from the frozen source revision; audit the complete release, including unchanged sections.
-
-Record conclusions, evidence, assumptions, and tradeoffs, not a private reasoning transcript. Share the useful result first, with the smallest specific blocker or next decision when needed.
-
+Record conclusions, evidence, assumptions, and tradeoffs rather than a private reasoning transcript. Lead with the useful result.

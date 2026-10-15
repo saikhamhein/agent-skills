@@ -1,6 +1,6 @@
 # Illustrated lesson action ledger
 
-Use this only when the project does not already record these details. End frames are exclusive.
+Optional expansion tool after the first useful clip. Use only the fields relevant to the current shot, and reuse existing records instead of duplicating them. End frames are exclusive.
 
 - Objective / audience / language:
 - Central question and prediction check:

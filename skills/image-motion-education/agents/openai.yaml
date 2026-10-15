@@ -1,4 +1,4 @@
 interface:
   display_name: "Image Motion Education"
   short_description: "Illustrated lessons with poses, props, and clear motion"
-  default_prompt: "Use $image-motion-education to create an illustrated educational animation with purposeful character actions, readable captions, and reproducible rendering."
+  default_prompt: "Use $image-motion-education to create one useful illustrated teaching clip, iterate quickly on its actions and captions, then expand and review the animation."

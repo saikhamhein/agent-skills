@@ -27,7 +27,7 @@ Inspired by [Alpha Rolie — Building a robot with Codex](https://alpha-rolie-bu
 
 ## Electronics Hardware Design
 
-Includes personal design preferences and worked lessons from the author's USB DUT hub project, together with general engineering practices. Project-specific decisions and prototype waivers are not universal design rules or independently verified hardware ratings.
+General engineering guidance informed by practical electronics and mechanical design work. Examples illustrate reusable checks; they do not supply validated ratings or universal component choices.
 
 ## Scope
 

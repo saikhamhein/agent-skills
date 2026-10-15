@@ -1,6 +1,8 @@
 # Component selection and substitution
 
-## Establish constraints before shopping
+## Start with the constraints that affect this decision
+
+For an exploratory comparison, capture the few constraints that separate candidates and produce a shortlist early. Use the detailed checks below as candidates become implementation choices, or when a concrete risk makes them relevant. Do not complete every field or qualify every model before showing a draft.
 
 Capture interface/version and role, input/output ranges, worst-case loads and transients, voltage domains, environment, isolation/protection, size, serviceability, test strategy, target cost, assembly route, and expected sourcing horizon. Separate known requirements from assumptions. Turn missing information that could invalidate the architecture into a stop gate; use clearly bounded assumptions for reversible comparisons.
 
@@ -23,7 +25,7 @@ Use manufacturer datasheets and application notes for technical authority. Distr
 
 Use [the component matrix](../assets/templates/component-matrix.csv) and [decision record](../assets/templates/decision-record.md) when they reduce repeated work. Keep enough evidence to review a conclusion without storing a reasoning transcript.
 
-## Qualify each selected part end to end
+## Qualify implementation choices before committing them
 
 1. **Electrical identity:** match exact MPN to function, pinout, pin type, polarity, exposed pad, reserved/NC pins, reset/enable strapping, sequencing, and legal operating conditions. Resolve family-level ambiguities before wiring.
 2. **Implementation:** check reference designs against this application; verify decoupling, stability constraints, feedback/compensation, protection coordination, crystal/clock loading, pull resistors, configuration storage, and fault handling where applicable. Treat application schematics as examples, not proof.

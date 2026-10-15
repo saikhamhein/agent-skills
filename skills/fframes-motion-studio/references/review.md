@@ -6,15 +6,21 @@ Choose the narration source the user/project authorizes: reviewed human recordin
 
 Trim/edit narration without changing scientific meaning. Use licensed recordings or separately implemented procedural sound, documenting sample rate, seed, parameters, and source rights. Match accents to explanatory events when useful; do not distort lesson timing to fit a music beat grid. Use FFrames audio tracks and mix controls from the [pinned audio reference](https://github.com/dmtrKovalenko/fframes/blob/v1.2.0/skills/fframes-video/references/audio.md); verify file availability and track timing before rendering. Use ducking/gain/fades to retain speech intelligibility. Require measured final-file audio and listening, not only a waveform picture.
 
+## Match review depth to the stage
+
+For a first shot, inspect the behavior being tested and obvious media/text defects, then iterate. Run the broader checks below on the release candidate or when a change puts that layer at risk; they are not a gate before every draft.
+
 ## Keep the review layers distinct
+
+Use only layers present in the deliverable. External expert review is needed when the content or unresolved expertise requires it, or the user requests it; never invent reviewer approval. The helper details below apply when using that helper, not as a requirement to generate planner metadata.
 
 | Layer | Evidence |
 | --- | --- |
 | Native structure | Resolved FFrames timeline; inspect diagnostics; missing fonts/media, SVG validity, panic/layout errors addressed |
 | Composition and motion | Strip/onion/frame previews, scene boundaries, safe areas, semantic consistency, visible labels and useful holds |
-| Final encoded media | `qc.py` JSON, encoded-file contact sheet, dimensions/FPS/duration, audio presence/loudness/peak, artifact SHA-256 |
-| Language and teaching | Full-resolution glyph review, terminology, captions, measured narration pacing, learning check and actual reviewer evidence |
-| Scientific and rights review | Model/units/assumptions/source checks, verified curriculum records, asset licenses, project release validator |
+| Final encoded media | `qc.py` when plan metadata exists, or equivalent ffprobe/FFmpeg checks against the brief; actual encoded output, dimensions/FPS/duration and applicable audio checks |
+| Language and teaching | Applicable glyph/terminology/caption checks, measured narration pacing; educational learning check and actual expert-review evidence when needed |
+| Scientific and rights review | Educational model/units/source checks when applicable; curriculum records only for claimed alignment; asset rights and an applicable project release validator |
 
 Use native diagnostics for layout/SVG problems; the encoded-file helper does not inspect individual SVG bounding boxes or detect internal text collisions. A native inspect pass also cannot certify teaching quality or scientific correctness.
 

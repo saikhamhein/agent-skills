@@ -8,6 +8,10 @@ These skills are experimental and evolve with my work. They may be incomplete, c
 
 Everything is provided **as is, without warranty**. Review the instructions and scripts before use, adapt project-specific assumptions, and independently check the results. Automated checks do not certify hardware safety, scientific accuracy, language quality, asset rights or production readiness.
 
+## Working mindset
+
+Move fast, learn from small failures, and iterate. Start with the smallest useful result, show it early, run focused checks, and improve it through feedback. Keep experiments reversible and save deeper reviews for real risks or release decisions. Speed is not a reason to hide failures or skip essential safety.
+
 ## Available skills
 
 - [Electronics Hardware Design](skills/electronics-hardware-design/SKILL.md): component selection, PCB layout, mechanical integration, validation and traceable releases.
@@ -19,7 +23,7 @@ Everything is provided **as is, without warranty**. Review the instructions and 
 
 Read the chosen skill's `SKILL.md`, then install the complete directory through your agent's supported skill workflow. Keep its references, scripts, assets and license notices together. Hosting a skill here does not automatically install or activate it.
 
-Each skill has its own dependencies and limits. Follow the consuming project's current instructions and tool versions. References to my projects, branding and design preferences are examples for those projects, not universal defaults.
+Each skill has its own dependencies and limits. Follow the consuming project's current instructions and tool versions. The workflows are reusable; choose requirements, branding and design constraints for the task at hand.
 
 ## Ideas and attribution
 

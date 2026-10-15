@@ -8,4 +8,4 @@ Optional prompts for a short project-log entry after a meaningful change. Use on
 - **Feedback / next decision:** original request, concrete review question and actual user response. Implemented does not mean accepted.
 - **Handoff:** editable source and delivered exports from the same revision, when applicable.
 
-Record a targeted risk check only when needed. Add physical-test evidence only for requested prototype work, and assembly-walkthrough findings only when the user explicitly requested that walkthrough. Unknown or untested is a valid status; this note must not trigger extra tests or reviews.
+Record a targeted risk check only when needed. Add physical-test evidence for requested prototype work or a concrete risk. Add detailed assembly-walkthrough findings only when the user explicitly requested that walkthrough. Unknown or untested is a valid status; this note must not trigger extra tests or reviews.
