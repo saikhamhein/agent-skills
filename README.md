@@ -1,33 +1,34 @@
 # agent-skills
 
-Reusable agent skills for electronics hardware design, native FFrames video production, and illustrated educational animation.
+My personal collection of agent skills for electronics, CAD, video production and educational animation. I created and adapted these for my own projects and working preferences, and share them in case they are useful to others.
+
+## Status and expectations
+
+These skills are experimental and evolve with my work. They may be incomplete, contain mistakes, depend on a particular setup, or stop working as tools change. There is no guarantee that they will work for your use case, and no promise of support or maintenance.
+
+Everything is provided **as is, without warranty**. Review the instructions and scripts before use, adapt project-specific assumptions, and independently check the results. Automated checks do not certify hardware safety, scientific accuracy, language quality, asset rights or production readiness.
 
 ## Available skills
 
-- [Robot CAD Iteration](skills/robot-cad-iteration/SKILL.md): integrated robot body/mechanism design, revision-bound visual feedback, targeted CAD checks and practical prototype loops. Original workflow informed by the Alpha Rolie journal; no unreleased CAD/tooling is bundled.
-
-- [Electronics Hardware Design](skills/electronics-hardware-design/SKILL.md): component selection, PCB placement and routing, CAD-linked mechanical design, validation, and traceable releases.
-- [FFrames Motion Studio](skills/fframes-motion-studio/SKILL.md): brief-to-storyboard workflow, 51 visual style briefs, 10 motion profiles, 13 video structures, native Rust/SVG implementation guidance, narration timing, science/Burmese review, and encoded-video QC.
-
-- [Image Motion Education](skills/image-motion-education/SKILL.md): character and prop animation from generated still images, scene-specific performance planning, educational/FFrames integration, Burmese text guidance, and tested Pillow/FFmpeg helpers. Adapted from Xiayi Sun’s image-animation workflow with retained MIT attribution.
+- [Electronics Hardware Design](skills/electronics-hardware-design/SKILL.md): component selection, PCB layout, mechanical integration, validation and traceable releases.
+- [Robot CAD Iteration](skills/robot-cad-iteration/SKILL.md): preview-first robot design, short feedback rounds, focused functional checks and revision-linked project logs.
+- [FFrames Motion Studio](skills/fframes-motion-studio/SKILL.md): native FFrames production guidance, visual-style catalogs, planning and encoded-video checks.
+- [Image Motion Education](skills/image-motion-education/SKILL.md): educational animation from still artwork, purposeful character actions and image-processing helpers.
 
 ## Use
 
-Install the complete skill directory through your agent's supported skill workflow, then invoke `$electronics-hardware-design`, `$fframes-motion-studio`, `$image-motion-education`, or `$robot-cad-iteration`. Open its `SKILL.md` and follow the referenced workflows and helpers. Hosting a skill here does not automatically install or activate it in an agent.
+Read the chosen skill's `SKILL.md`, then install the complete directory through your agent's supported skill workflow. Keep its references, scripts, assets and license notices together. Hosting a skill here does not automatically install or activate it.
 
-For local Codex, copy the chosen directory into the consuming project's `.agents/skills/`, or your supported user skill directory. See [official skill installation/discovery guidance](https://developers.openai.com/codex/skills/). Preserve the scripts, references, catalogs, metadata, and license notice together. Refresh/restart the agent if its skill selector has not updated.
+Each skill has its own dependencies and limits. Follow the consuming project's current instructions and tool versions. References to my projects, branding and design preferences are examples for those projects, not universal defaults.
 
-Myanmar Science Visuals provides a pinned, hash-verified private-repository installer:
+## Ideas and attribution
 
-```bash
-# Run from a checkout of myanmar-science-visuals, using Git credentials with access to this repo.
-node scripts/install-motion-studio.mjs
-node scripts/install-motion-studio.mjs --check
-```
+I do not claim that all ideas, techniques or workflows in this repository are original to me. These skills combine personal experience with existing tools, public documentation, community work and adaptations of others' material. Credit belongs to the respective authors.
 
-Motion Studio's bundled Python helpers use Python 3.11+ standard library; encoded-video QC additionally requires FFmpeg/ffprobe. The catalogs are art-direction briefs rather than 51 prebuilt native effects. Read [provenance and the retained MIT notice](skills/fframes-motion-studio/references/provenance.md) before redistributing the adapted catalog assets. The native workflow uses FFrames, with no browser rendering dependency.
+See [THIRD_PARTY.md](THIRD_PARTY.md) and each skill's provenance notes for known sources, adaptation details and retained notices. Referencing a project does not imply its author's endorsement.
 
-The electronics release-audit helper checks file inventory and integrity; it does not qualify hardware. Motion Studio checks media properties and produces review evidence; it does not certify science, language, rights, or release approval.
+## License
 
-Image Motion Education keeps existing native renderers in place. Its standalone helpers use Python 3.11+, the bundled Pillow pin, and FFmpeg/ffprobe; OpenCV and TTS are optional. Read its [rendering guide](skills/image-motion-education/references/rendering.md) and [source attribution](skills/image-motion-education/references/provenance.md). The article’s videos are reference material, not bundled production assets.
+My contributions are released under the [MIT License](LICENSE). Third-party material retains its original copyright notices and applicable license terms; the root license does not replace them. Preserve all applicable notices when copying or redistributing.
 
+Linked articles, videos, CAD projects, fonts and other external assets are not automatically covered by this repository's MIT license.
