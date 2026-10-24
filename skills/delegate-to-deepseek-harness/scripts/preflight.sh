@@ -5,12 +5,16 @@ script_dir=$(cd "$(dirname "$0")" && pwd -P)
 # shellcheck source=credential_env.sh
 source "$script_dir/credential_env.sh"
 
-if ! load_delegation_api_key; then
-  setup_command="$script_dir/configure_api_key.sh"
-  printf '{"status":"credentials-required","dedicated_api_key":false,"setup_command":"%s"}\n' \
-    "$setup_command"
-  exit 78
-fi
+load_delegation_api_key
+case $? in
+  0) ;;
+  1) export DSH_DELEGATE_CREDENTIAL_SOURCE=harness ;;  # no dedicated key: use Harness' own credential
+  *)
+    printf '{"status":"credentials-invalid","dedicated_api_key":false,"setup_command":"%s"}\n' \
+      "$script_dir/configure_api_key.sh"
+    exit 78
+    ;;
+esac
 
 runtime_root=${DSH_DELEGATE_RUNTIME_DIR:-"${XDG_DATA_HOME:-$HOME/.local/share}/dsh-delegation"}
 runner="$runtime_root/current/bin/dsh-delegate"

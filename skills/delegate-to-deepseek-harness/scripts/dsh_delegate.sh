@@ -5,12 +5,17 @@ script_dir=$(cd "$(dirname "$0")" && pwd -P)
 # shellcheck source=credential_env.sh
 source "$script_dir/credential_env.sh"
 
-if ! load_delegation_api_key; then
-  echo "error: dedicated DeepSeek API key is not configured" >&2
-  echo "run securely in a terminal: $script_dir/configure_api_key.sh" >&2
-  echo "do not paste API keys into a ChatGPT conversation" >&2
-  exit 78
-fi
+credential_rc=0
+load_delegation_api_key || credential_rc=$?
+case $credential_rc in
+  0) ;;
+  1) echo "note: no dedicated key; using Harness' own credential" >&2 ;;
+  *)
+    echo "error: dedicated credential file is malformed" >&2
+    echo "fix it securely in a terminal: $script_dir/configure_api_key.sh" >&2
+    exit 78
+    ;;
+esac
 
 if [[ $# -lt 1 ]]; then
   echo "usage: $0 <task> [cwd] [dsh-delegate options...]" >&2
