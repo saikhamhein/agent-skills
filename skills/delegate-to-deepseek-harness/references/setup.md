@@ -2,7 +2,7 @@
 
 ## Install from a clone
 
-Prerequisites are Bash, Python 3.10 or newer, Git, Codex, and a DeepSeek API
+Prerequisites are Bash, Python 3.10 or newer, Git, an orchestrating agent (Codex or Claude Code), and a DeepSeek API
 credential already usable by Harness. Install either the separate persistent
 `dsh-delegate` runtime or the `dsh` CLI with its `headless` profile configured.
 
@@ -13,6 +13,19 @@ cp -R agent-skills/skills/delegate-to-deepseek-harness \
   "${CODEX_HOME:-$HOME/.codex}/skills/"
 ```
 
+For Claude Code, install it as a personal skill instead (or into a project's
+`.claude/skills/`). The `agents/openai.yaml` file is Codex-only metadata and is
+ignored by Claude Code:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R agent-skills/skills/delegate-to-deepseek-harness ~/.claude/skills/
+```
+
+Both installs can coexist. The scripts are location-independent and share the
+same dedicated credential, so paths below use `~/.codex/skills`; substitute
+`~/.claude/skills` for Claude Code.
+
 This copies the skill, helper scripts and references. This repository does not
 bundle the persistent Python runtime, its installer, a systemd service, or the
 Harness CLI. The launcher looks for `dsh-delegate` at
@@ -22,8 +35,8 @@ Harness CLI. The launcher looks for `dsh-delegate` at
 conversation context. See [sessions.md](sessions.md) for the separate runtime's
 session behavior.
 
-Codex detects skill changes automatically; restart only if the skill does not
-appear.
+Codex and Claude Code detect skill changes automatically; restart only if the
+skill does not appear.
 
 ## Dedicated API credential
 

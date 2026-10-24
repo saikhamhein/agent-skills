@@ -18,7 +18,7 @@ Move fast, learn from small failures, and iterate. Start with the smallest usefu
 - [Robot CAD Iteration](skills/robot-cad-iteration/SKILL.md): preview-first robot design, short feedback rounds, focused functional checks and revision-linked project logs.
 - [FFrames Motion Studio](skills/fframes-motion-studio/SKILL.md): native FFrames production guidance, visual-style catalogs, planning and encoded-video checks.
 - [Image Motion Education](skills/image-motion-education/SKILL.md): educational animation from still artwork, purposeful character actions and image-processing helpers.
-- [DeepSeek Harness Delegation](skills/delegate-to-deepseek-harness/SKILL.md): bounded coding delegation through durable project sessions when the separate runtime is installed, with a one-shot headless fallback and independent verification.
+- [DeepSeek Harness Delegation](skills/delegate-to-deepseek-harness/SKILL.md): bounded coding delegation for Codex or Claude Code through durable project sessions when the separate runtime is installed, with a one-shot headless fallback and independent verification.
 
 ## Use
 

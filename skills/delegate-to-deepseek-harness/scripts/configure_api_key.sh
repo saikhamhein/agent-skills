@@ -76,5 +76,5 @@ if [[ ${DSH_DELEGATE_SKIP_SERVICE_RESTART:-0} != 1 ]]; then
   fi
 fi
 
-echo "Dedicated DeepSeek API key configured for Codex delegation."
+echo "Dedicated DeepSeek API key configured for delegation."
 echo "Stored securely at: $credential_file"

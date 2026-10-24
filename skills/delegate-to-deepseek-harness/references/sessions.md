@@ -45,7 +45,7 @@ of truth; prior model statements do not override the workspace.
 ## Process lifetime
 
 The CLI auto-starts one private loopback daemon and keeps an official SDK
-runtime open for each active project configuration. Separate Codex calls reuse
+runtime open for each active project configuration. Separate orchestrator calls reuse
 that runtime and logical session, preserving conversation and session-owned
 shell state.
 
