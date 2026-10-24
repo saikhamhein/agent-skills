@@ -1,6 +1,30 @@
-# agent-skills
+# Agent Skills: DeepSeek Delegation for Codex, Electronics, CAD and Animation
 
-My personal collection of agent skills for electronics, CAD, video production, educational animation and coding delegation. I created and adapted these for my own projects and working preferences, and share them in case they are useful to others.
+My personal collection of agent skills for coding delegation, electronics, CAD, video production and educational animation. I created and adapted these for my own projects and working preferences, and share them in case they are useful to others.
+
+## DeepSeek delegation for Codex, with Claude support planned
+
+### Why I built it
+
+I wanted to spend fewer expensive-model tokens on implementation and large-document processing. My goal is to keep Codex and Claude Opus focused on thinking, planning and review, while delegating bounded implementation and read-heavy tasks to DeepSeek.
+
+The published skill currently documents Codex setup and orchestration. Claude support is planned.
+
+### How the workflow works
+
+1. **Codex defines the task:** set the scope, constraints and acceptance criteria.
+2. **DeepSeek does the bounded work:** implement a change, repair tests, explore a repository, or process a clearly scoped set of text documents.
+3. **Codex verifies the result:** run the agreed checks and review changes before accepting them.
+
+Keep architecture, ambiguous decisions, security-sensitive judgment and final verification with the lead agent. Give DeepSeek complete, independently checkable tasks rather than an open-ended project.
+
+The aim is to reduce premium-model token usage. Actual token usage and cost depend on the task, context, retries and review overhead.
+
+### Get started
+
+Read the [DeepSeek Harness delegation skill](skills/delegate-to-deepseek-harness/SKILL.md), follow the [setup and prerequisites](skills/delegate-to-deepseek-harness/references/setup.md), and check the [session guide](skills/delegate-to-deepseek-harness/references/sessions.md).
+
+Persistent project sessions require the separate `dsh-delegate` runtime, which is not bundled in this repository. The launcher can fall back to an installed DeepSeek Harness CLI with a configured headless profile; those runs are one-shot.
 
 ## Status and expectations
 
@@ -14,11 +38,11 @@ Move fast, learn from small failures, and iterate. Start with the smallest usefu
 
 ## Available skills
 
+- [DeepSeek Delegation for Codex](skills/delegate-to-deepseek-harness/SKILL.md): bounded implementation and read-heavy work through DeepSeek Harness, with independent verification. Persistent sessions require the separate runtime; the headless fallback is one-shot. Claude support is planned.
 - [Electronics Hardware Design](skills/electronics-hardware-design/SKILL.md): component selection, PCB layout, mechanical integration, validation and traceable releases.
 - [Robot CAD Iteration](skills/robot-cad-iteration/SKILL.md): preview-first robot design, short feedback rounds, focused functional checks and revision-linked project logs.
 - [FFrames Motion Studio](skills/fframes-motion-studio/SKILL.md): native FFrames production guidance, visual-style catalogs, planning and encoded-video checks.
 - [Image Motion Education](skills/image-motion-education/SKILL.md): educational animation from still artwork, purposeful character actions and image-processing helpers.
-- [DeepSeek Harness Delegation](skills/delegate-to-deepseek-harness/SKILL.md): bounded coding delegation for Codex or Claude Code through durable project sessions when the separate runtime is installed, with a one-shot headless fallback and independent verification.
 
 ## Use
 
