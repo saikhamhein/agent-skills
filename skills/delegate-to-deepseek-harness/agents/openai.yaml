@@ -1,0 +1,7 @@
+interface:
+  display_name: "Persistent DeepSeek Delegation"
+  short_description: "Use durable project sessions for DeepSeek coding"
+  default_prompt: "Use $delegate-to-deepseek-harness to delegate this bounded implementation through the project session, then verify it independently."
+
+policy:
+  allow_implicit_invocation: true
