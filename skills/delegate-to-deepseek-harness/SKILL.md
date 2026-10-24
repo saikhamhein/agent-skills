@@ -1,19 +1,20 @@
 ---
 name: delegate-to-deepseek-harness
-description: Delegate bounded, implementation-heavy, repetitive, or read-heavy coding work from Codex to DeepSeek Harness using durable per-project sessions, with an official headless fallback. Keep Codex responsible for scope, risky judgment, review, integration, and final verification. Do not use for trivial edits, secrets, deployments, destructive operations, or work that cannot be independently checked.
+description: Delegate bounded, implementation-heavy, repetitive, or read-heavy coding work from the orchestrating agent (Codex or Claude Code) to DeepSeek Harness using durable per-project sessions, with an official headless fallback. Keep the orchestrator responsible for scope, risky judgment, review, integration, and final verification. Do not use for trivial edits, secrets, deployments, destructive operations, or work that cannot be independently checked.
 ---
 
 # Delegate to DeepSeek Harness
 
-Use DeepSeek Harness as an implementation worker. Keep Codex as orchestrator,
-reviewer, and final authority.
+Use DeepSeek Harness as an implementation worker. Keep the orchestrating agent
+(Codex or Claude Code, referred to below as the orchestrator) as reviewer and
+final authority.
 
 ## Choose what to delegate
 
 Delegate a complete logical unit when it is context-heavy, mechanical,
 repetitive, or independently verifiable. Keep architecture, ambiguous product
-judgment, security-sensitive decisions, tiny edits, and final verification in
-Codex.
+judgment, security-sensitive decisions, tiny edits, and final verification with
+the orchestrator.
 
 Never send secrets or privileged credentials in a worker brief. Do not delegate
 publishing, deployment, destructive external actions, or work that cannot be
@@ -24,10 +25,10 @@ checked independently.
 Before the first delegation in a task, run `scripts/preflight.sh`. If it reports
 `credentials-required`, pause delegation and tell the user to run
 `scripts/configure_api_key.sh` in a private terminal. Never ask the user to
-paste an API key into ChatGPT, a worker brief, or a command argument. Resume
+paste an API key into the chat, a worker brief, or a command argument. Resume
 only after preflight succeeds.
 
-The dedicated key keeps Codex delegation usage separate from the user's normal
+The dedicated key keeps delegation usage separate from the user's normal
 Harness activity. Read `references/setup.md` only when configuring, rotating,
 or troubleshooting credentials.
 
@@ -86,7 +87,8 @@ action. Do not copy or duplicate that override in the worker brief.
 
 ## Run the worker
 
-Resolve this skill directory and run:
+Resolve this skill directory (for example `~/.claude/skills/delegate-to-deepseek-harness`
+for Claude Code or `~/.codex/skills/...` for Codex) and run:
 
 ```bash
 scripts/dsh_delegate.sh "<worker brief>" "<absolute project cwd>"
@@ -111,15 +113,16 @@ TODO state. Read
 The wrapper normally blocks until DeepSeek returns a terminal result. If a run
 continues asynchronously or its completion must be checked later, do not use
 repeated status commands, short sleeps, or tool-output polling. Create a
-scheduled task as a heartbeat in the current thread to check the existing
-session and workspace at a reasonable cadence.
+heartbeat to check the existing session and workspace at a reasonable cadence:
+a scheduled task in the current thread on Codex, or a background run
+(`run_in_background`) or a long-interval wakeup on Claude Code.
 
 The heartbeat must stay quiet while nothing meaningful has changed. It should
 notify only when the work completes, fails, is blocked, or needs user action;
 run the verification contract when completion is reported; and stop or pause
 itself after reaching a terminal state. Do not schedule a heartbeat for an
-ordinary synchronous run that finishes in the current turn. If scheduled tasks
-are unavailable, report that limitation and use one bounded wait rather than a
+ordinary synchronous run that finishes in the current turn. If scheduling
+is unavailable, report that limitation and use one bounded wait rather than a
 polling loop.
 
 ## Verify the result
